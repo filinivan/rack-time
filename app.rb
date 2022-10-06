@@ -10,7 +10,7 @@ class App
         ftime.call
         ftime.success? ? response(200, ftime.get_time) : response(401, ftime.get_incorrect)      
     else
-      response(400, 'Wrong path')
+      response(400, 'Wrong pathh')
     end
   end
 
