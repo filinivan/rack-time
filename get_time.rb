@@ -16,7 +16,10 @@ class GetTime
     @query.each do |item|
       FORMAT[item.to_sym].nil? ? @query_incorrect << item : @query_correct << FORMAT[item.to_sym] 
     end
+    self.success? ? {status: 200, body: get_time} : {status: 401, body: get_incorrect}
   end
+
+  private
 
   def success?
     @query_incorrect.empty?
